@@ -1,0 +1,74 @@
+﻿@page
+@model dotNET_Test_Digistarts.Pages.ApiModel
+
+@{
+    ViewData["Title"] = "Retorno API";
+}
+
+<h1>Dados da Covid 19 no Brasil</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.resultado.Results[0].state)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.resultado.Results[0].confirmed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.resultado.Results[0].confirmed_per_100k_inhabitants)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.resultado.Results[0].data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.resultado.Results[0].death_rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.resultado.Results[0].deaths)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.resultado.Results[0].estimated_population)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.resultado.Results[0].estimated_population_2019)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.resultado.Results) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.confirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.confirmed_per_100k_inhabitants)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.death_rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deaths)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estimated_population)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.estimated_population_2019)
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
+
